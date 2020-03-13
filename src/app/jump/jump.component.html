@@ -1,0 +1,16 @@
+<br>
+<button class="btn btn-primary" (click)="adduser()">add user</button>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12" *ngFor="let d of arr;let i =index">
+            <div class="content">
+                <label for="name">Name : </label>
+                <input readonly type="text" [(ngModel)]="d.name" class="form-control col-lg-5 col-12">
+                <label for="age">Age : </label>
+                <input readonly type="text" [(ngModel)]="d.age" class="form-control col-lg-4 col-12">
+                <button class="btn btn-primary" (click)="edit(i)">Edit</button>
+                <button class="btn btn-primary float" (click)="delete(i)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

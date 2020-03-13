@@ -1,0 +1,6 @@
+.error {
+    color: red;
+}
+.form-control{
+    text-transform: capitalize;
+}

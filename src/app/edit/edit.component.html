@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <form name="form" *ngFor="let value of arra;let i=index" (ngSubmit)="for.valid && onSubmit()" #for="ngForm">
+                <div class="form-group">
+                    <label for="name">Enter Name</label>
+                    <input type="text" class="form-control" ngModel required name="name" [(ngModel)]=value.name
+                        #names="ngModel" autocomplete="off" id="names">
+                    <div *ngIf="names.errors && (names.dirty || names.touched || for.submitted)">
+                        <div *ngIf="names.errors?.required" class="error">
+                            Name is Required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="age">Enter age</label>
+                    <input type="text" autocomplete="off" class="form-control" ngModel required name="age"
+                        [(ngModel)]=value.age #ages="ngModel" id="ages">
+                    <div *ngIf="ages.errors && (ages.dirty || ages.touched || for.submitted)">
+                        <div *ngIf="ages.errors?.required" class="error">
+                            Age is Required.
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                &nbsp;
+                <button type="button" class="btn btn-primary" (click)="back()">back</button>
+            </form>
+        </div>
+    </div>
+</div>
